@@ -1,0 +1,108 @@
+<app-header [isHomePage]="true"></app-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding background">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="card-background">
+          <ion-card-header>
+            <ion-card-title>
+              Bienvenid@ {{nombre}}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-list-header>
+                <ion-label>Listado de cursos</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-icon name="library-outline" slot="start"></ion-icon>
+                <ion-label>Diseño</ion-label>
+                <ion-button expand="full" color="success" routerLink="/alumnos/30/20">
+                  Ver alumnos
+                </ion-button>
+              </ion-item>
+              <ion-item>
+                <ion-icon name="library-outline" slot="start"></ion-icon>
+                <ion-label>Arquitectura</ion-label>
+                <ion-button expand="full" color="success" routerLink="/alumnos/30/40">
+                  Ver alumnos
+                </ion-button>
+              </ion-item>
+              <ion-item>
+                <ion-icon name="library-outline" slot="start"></ion-icon>
+                <ion-label>Calidad</ion-label>
+                <ion-button expand="full" color="success" routerLink="/alumnos/30/60">
+                  Ver alumnos
+                </ion-button>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="card-background">
+            <ion-card-header>
+              Mis Publicaciones
+            </ion-card-header>
+           <ion-card-content *ngIf="this.mePosts && this.mePosts.length !==0">
+            <ion-row>
+              <ion-col size="12" *ngFor="let post of this.mePosts.posts">
+                <ion-card class="card-background">
+                  <ion-card-title class="ion-padding">
+                    <!-- <ion-text>{{post.title}}</ion-text> -->
+                    <div style="display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-content: center;
+                    justify-content: space-between;
+                    align-items: stretch;">
+                      <div slot="start">
+                        <ion-text>{{post.title}}</ion-text>
+                      </div>
+                      <div slot="end">
+                        <ion-button expand="full" color="tertiary" (click)="abrirComentarios(post.id)">Comentarios</ion-button>
+                      </div>
+                    </div>
+                  </ion-card-title>
+                  <ion-card-content style="width: 100%;">
+                    <ion-text>{{post.body}}</ion-text>
+                  </ion-card-content>
+                </ion-card>
+               
+              </ion-col>
+            </ion-row>
+           </ion-card-content>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <!-- <div class="big-text spaced-div" >
+  
+  </div>
+  <div class="spaced-div">
+    <ion-list>
+      <ion-item>
+        <ion-icon name="library-outline" slot="start"></ion-icon>
+        <ion-label>Diseño</ion-label>
+        <a routerLink="/alumnos">
+          Ver alumnos
+        </a>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="library-outline" slot="start"></ion-icon>
+        <ion-label>Arquitectura</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="library-outline" slot="start"></ion-icon>
+        <ion-label>Calidad</ion-label>
+      </ion-item>
+    </ion-list>
+  </div> -->
+
+</ion-content>

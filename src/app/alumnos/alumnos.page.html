@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Alumnos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" *ngIf="this.users" [fullscreen]="true">
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item *ngFor = "let character of characters?.results">
+          <ion-label slot="start">
+            {{character?.name}}
+          </ion-label>
+          <ion-button slot="end" (click)="detalle(character)">
+            Ver detalle
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class="card-background">
+          <ion-card-header>
+            Listado de alumnos
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item *ngFor="let user of this.users.users">
+              <ion-avatar slot="start">
+                <img alt="{{user.firstName}}" src="{{user.image}}" />
+              </ion-avatar>
+             <label>
+              <p>Nombre: {{user.firstName}} </p>
+              <p>Apellidos {{user.lastName}} {{user.maidenName}}</p>
+             </label>
+             <ion-button (click)="ObtenerMasInformacion(user.id)" expand="full" color="success" slot="end"><ion-icon name="information-circle-outline"></ion-icon> Ver Más</ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

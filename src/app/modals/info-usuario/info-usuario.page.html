@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title slot="start">Información</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrar()">Cerrar </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  *ngIf="this.userDetalle" [fullscreen]="true">
+  <ion-card  class="card-background">
+    <ion-card-header>
+      Detalle {{this.userDetalle.firstName}}
+    </ion-card-header>
+    <img style="margin: auto;
+    display: block;" src="{{this.userDetalle.image}}">
+    <ion-card-content>
+    <ion-list>
+      <ion-item>
+        Nombre: {{this.userDetalle.firstName}} {{this.userDetalle.lastName}}
+      </ion-item>
+      <ion-item>
+        Edad: {{this.userDetalle.age}}
+      </ion-item>
+      <ion-item>
+        Fecha de nacimiento: {{this.userDetalle.birthDate}}
+      </ion-item>
+      <ion-item>
+        Correo: {{this.userDetalle.email}}
+      </ion-item>
+    </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

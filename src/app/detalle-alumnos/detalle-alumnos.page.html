@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Detalle Alumnos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="this.userDetalle"  class="background" [fullscreen]="true">
+  <!-- <div>
+    <ion-card>
+      
+      <img alt="" [src]="personaje?.image" />
+      <ion-card-header>
+        <ion-card-title>{{personaje?.name}}</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card>
+
+  </div> -->
+  <ion-card  class="card-background">
+    <ion-card-header>
+      Detalle {{this.userDetalle.firstName}}
+    </ion-card-header>
+    <img style="margin: auto;
+    display: block;" src="{{this.userDetalle.image}}">
+    <ion-card-content>
+    <ion-list>
+      <ion-item>
+        Nombre: {{this.userDetalle.firstName}} {{this.userDetalle.lastName}}
+      </ion-item>
+      <ion-item>
+        Edad: {{this.userDetalle.age}}
+      </ion-item>
+      <ion-item>
+        Fecha de nacimiento: {{this.userDetalle.birthDate}}
+      </ion-item>
+      <ion-item>
+        Correo: {{this.userDetalle.email}}
+      </ion-item>
+    </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

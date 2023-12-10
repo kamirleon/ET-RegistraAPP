@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title slot="start">{{titulo}}</ion-title>
+    
+    <ion-chip (click)="infoUsuario()" slot="end" *ngIf="isHomePage">
+      <ion-avatar>
+        <img alt="{{nombre}}" [src]="this.imgUsuario" />
+      </ion-avatar>
+      <ion-label>{{nombre}}</ion-label>
+    </ion-chip>
+    <ion-buttons  slot="end" *ngIf="isHomePage">
+      <ion-button fill="solid" (click)="cerrarSesion()">Cerrar Sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

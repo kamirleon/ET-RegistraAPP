@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title slot="start">Recuperar Contraseña</ion-title>
+    <ion-buttons  slot="end">
+     <ion-button (click)="cerrar()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+      <ion-img src="https://images.ctfassets.net/lzny33ho1g45/password-security-p-img/72f3ab78724796a0990219ee8ed495c7/file.png?w=1520&fm=jpg&q=30&fit=thumb&h=760"></ion-img>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <form [formGroup]="this.formulariorecuperar">
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="12" ></ion-col>
+            <ion-input formControlName="nombre" label="Nombre alumno" label-placement="floating" fill="outline"
+            placeholder="Ingrese su nombre"></ion-input>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">  
+              <ion-button expand="block" (click)="volverLogin()">RECUPERAR</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+  
+  
+      </form>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
