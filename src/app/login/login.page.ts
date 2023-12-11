@@ -64,11 +64,14 @@ export class LoginPage implements OnInit {
        this.stateService.setImgUsuario=data.image;
        this.login();
        this.router.navigate(['/inicio']);
+       this.formulariologin.reset();
+
     },error =>{
       console.log("POST llamada por error", error);
       if(error.error.message == 'Invalid credentials'){
         //  alert(`Credenciales invalidas, intente nuevamente.`);
         this.mostrarAlerta('Ups','Las credenciales que nos envías son invalidas, intenta nuevamente','entendido')
+        this.formulariologin.reset();
       }
     },() => {
       console.log("La POST observable ahora se ha completado");

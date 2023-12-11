@@ -16,27 +16,42 @@
               <ion-list-header>
                 <ion-label>Listado de cursos</ion-label>
               </ion-list-header>
-              <ion-item>
-                <ion-icon name="library-outline" slot="start"></ion-icon>
-                <ion-label>Diseño</ion-label>
-                <ion-button expand="full" color="success" routerLink="/alumnos/30/20">
-                  Ver alumnos
-                </ion-button>
-              </ion-item>
-              <ion-item>
-                <ion-icon name="library-outline" slot="start"></ion-icon>
-                <ion-label>Arquitectura</ion-label>
-                <ion-button expand="full" color="success" routerLink="/alumnos/30/40">
-                  Ver alumnos
-                </ion-button>
-              </ion-item>
-              <ion-item>
-                <ion-icon name="library-outline" slot="start"></ion-icon>
-                <ion-label>Calidad</ion-label>
-                <ion-button expand="full" color="success" routerLink="/alumnos/30/60">
-                  Ver alumnos
-                </ion-button>
-              </ion-item>
+              <ion-card>
+                <ion-item>
+                  <ion-icon name="library-outline" slot="start"></ion-icon>
+                  <ion-label>Diseño</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-button expand="full" color="success" routerLink="/alumnos/30/20">
+                    Ver alumnos
+                  </ion-button>
+                </ion-item>
+              </ion-card>
+              
+              <ion-card>
+                <ion-item>
+                  <ion-icon name="library-outline" slot="start"></ion-icon>
+                  <ion-label>Arquitectura</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-button expand="full" color="success" routerLink="/alumnos/30/40">
+                    Ver alumnos
+                  </ion-button>
+                </ion-item>
+              </ion-card>
+              
+              <ion-card>
+                <ion-item>
+                  <ion-icon name="library-outline" slot="start"></ion-icon>
+                  <ion-label>Calidad</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-button expand="full" color="success" routerLink="/alumnos/30/60">
+                    Ver alumnos
+                  </ion-button>
+                </ion-item>
+              </ion-card>
+              
             </ion-list>
           </ion-card-content>
         </ion-card>
@@ -63,13 +78,14 @@
                       <div slot="start">
                         <ion-text>{{post.title}}</ion-text>
                       </div>
-                      <div slot="end">
-                        <ion-button expand="full" color="tertiary" (click)="abrirComentarios(post.id)">Comentarios</ion-button>
-                      </div>
+
                     </div>
                   </ion-card-title>
                   <ion-card-content style="width: 100%;">
                     <ion-text>{{post.body}}</ion-text>
+                    <div slot="end">
+                      <ion-button expand="full" color="tertiary" (click)="abrirComentarios(post.id)">Comentarios</ion-button>
+                    </div>
                   </ion-card-content>
                 </ion-card>
                
